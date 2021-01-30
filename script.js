@@ -9,6 +9,24 @@ const humidityE1 = document.getElementById("humidity");
 const windSpeedE1 = document.getElementById("wind-speed");
 const uvIndexE1 = document.getElementById("UV-index");
 
-Function getCurrentWeather(cityName) {
-    let queryURL = "api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid" + c0443b1297dbab0e3849b6173dea9ceb 
-}
+
+searchBtnE1.addEventListener('click',()=>{
+    
+    fetch(
+        "api.openweathermap.org/data/2.5/forecast?q=" + cityNameE1 + "&c0443b1297dbab0e3849b6173dea9ceb" 
+    
+    )
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        const {temperature} = data;
+        temperature.textContent= temperature;
+    });
+    
+})
+
+
+
+    
