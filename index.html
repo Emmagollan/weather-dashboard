@@ -3,77 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <nav class="navbar">
-        <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <p class="search-for-city-heading">Search for a city</p>
-                <div class="input-group mb-3">
-                    <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" id="search-button">
-                            <p">search</p>
-                        </button>
-                    </div>
-                </div>
-                <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
-                <form id="history"></form>
+    <header class = "bg-dark text-white text-center p-2">
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container-fluid">
+        <div class = "row">
+            <div class="col-12 col-md-3 p-2">
+                <form class = "border p-2" id = "form">
+                    <h4>Search for a City</h2>
+                    <input id="city-input" type = "text" class = "form-input"/>
+                    <button class = "btn btn-primary" type = "submit">Search</button>
+                </form>
+                <div class = "past-search border" id = "past-search"></div>
             </div>
-            <div class="col-8">
-                <div class="row mr-0">
-                    <div class="col-12 border border-info m-3">
-                        <div class="row">
-                            <div class="col-12">
-                                <span id="city-name" class="city-name align-middle"></span>
-                                <img id="current-pic" src="" alt="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="temperature"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="humidity"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p id="wind-speed"></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 d-flex">
-                                <p id="UV-index"></p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-9">
+                <div class = "row border selected-city" id = "current-forecast">
+                    <div class = "col-12">
+                        <h2 id="searched-city"></h2>
+                        <div id = "weather"></div>
+                    </div>  
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h3>5-Day Forecast</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
-                </div>
-                </div>
+                <div class = "row border" id = "five-day-forecast">
+                        <h2 class= "col-12" id = "heading"></h2>
+                        <div class = "d-flex" id = "forecast"></div>
+                </div>  
             </div>
         </div>
-    </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
