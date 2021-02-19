@@ -44,27 +44,27 @@ const displayWeather = function(weather, searchCity){
    //console.log(weather);
 
    //create date element
-   var currentDate = document.createElement("span")
+   let currentDate = document.createElement("span")
    currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
    citySearchInputEl.appendChild(currentDate);
 
    //create an image element
-   var weatherIcon = document.createElement("img")
+   let weatherIcon = document.createElement("img")
    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
    citySearchInputEl.appendChild(weatherIcon);
 
    //create a span element to hold temperature data
-   var temperatureEl = document.createElement("span");
+   let temperatureEl = document.createElement("span");
    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
    temperatureEl.classList = "list-group-item"
   
    //create a span element to hold Humidity data
-   var humidityEl = document.createElement("span");
+   let humidityEl = document.createElement("span");
    humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
    humidityEl.classList = "list-group-item"
 
    //create a span element to hold Wind data
-   var windSpeedEl = document.createElement("span");
+   let windSpeedEl = document.createElement("span");
    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
    windSpeedEl.classList = "list-group-item"
 
@@ -94,22 +94,22 @@ const display5Day = function(weather){
     forecastContainerEl.textContent = ""
     forecastTitle.textContent = "5-Day Forecast:";
 
-    var forecast = weather.list;
+    let forecast = weather.list;
         for(var i=5; i < forecast.length; i=i+8){
-       var dailyForecast = forecast[i];
+       let dailyForecast = forecast[i];
         
        
-       var forecastEl=document.createElement("div");
+       let forecastEl=document.createElement("div");
        forecastEl.classList = "card bg-primary text-light m-2";
 
         //create date element
-       var forecastDate = document.createElement("h5")
+       let forecastDate = document.createElement("h5")
        forecastDate.textContent= moment.unix(dailyForecast.dt).format("MMM D, YYYY");
        forecastDate.classList = "card-header text-center"
        forecastEl.appendChild(forecastDate);
 
         //create an image element
-       var weatherIcon = document.createElement("img")
+       let weatherIcon = document.createElement("img")
        weatherIcon.classList = "card-body text-center";
        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
 
@@ -117,14 +117,14 @@ const display5Day = function(weather){
        forecastEl.appendChild(weatherIcon);
 
         //create temperature span
-       var forecastTempEl=document.createElement("span");
+       let forecastTempEl=document.createElement("span");
        forecastTempEl.classList = "card-body text-center";
        forecastTempEl.textContent = dailyForecast.main.temp + " °F";
 
        //append to forecast card
         forecastEl.appendChild(forecastTempEl);
 
-       var forecastHumEl=document.createElement("span");
+       let forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
        forecastHumEl.textContent = dailyForecast.main.humidity + "  %";
 
@@ -147,7 +147,7 @@ const pastSearch = function(pastSearch){
 
 
 const pastSearchHandler = function(event){
-    var city = event.target.getAttribute("data-city")
+    let city = event.target.getAttribute("data-city")
     if(city){
         getCityWeather(city);
         get5Day(city);

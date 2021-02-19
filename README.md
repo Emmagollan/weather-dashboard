@@ -1,9 +1,9 @@
 # weather-dashboad
 
-## Purpose - to create a one page dashboard that allows user to search a city by name to see current weather information, including temprature, humidity, wind speed, and UV index.
+## Purpose - to create a one page dashboard that allows the user to search a city by name to see current weather information, including temprature, humidity, and wind speed.
 
-## Built With HTML, CSS, and using javaScript to pull data from a server side API.
+## Technologies and tools used - HTML, CSS, bootsrap, JavaScript, jQuery, server-side APIs   
 
-## Website link here..
+## Website link  https://emmagollan.github.io/weather-dashboard/
 
 ## Made by Emma Gollan.
